@@ -17,6 +17,7 @@
   padding: 0 0.6em;
 }
 
+/* header styles */
 .header {
   background-color: hsl(0, 0%, 26%);
 }
@@ -62,3 +63,22 @@
   top: 0.9rem;
   left: 2.7rem;
 }
+/* header styles */
+
+/* footer styles */
+.footer {
+  background-color: hsl(120, 5%, 25%);
+  color: hsl(0, 0%, 83%);
+  /* padding: 0.3125rem 0; */
+  text-align: center;
+}
+
+.footer-link {
+  color: hsl(0, 3%, 74%);
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-link:hover {
+  color: hsl(0, 0%, 93%);
+}
+/* footer styles */

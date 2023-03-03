@@ -25,6 +25,7 @@ const createFooter = () => {
   //  create container
   const container = createElement("div");
   container.classList.add("container");
+
   // create footer content
   const footerContent = createFooterContent();
 
