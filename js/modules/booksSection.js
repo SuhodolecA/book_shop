@@ -32,6 +32,7 @@ const createBooksCard = (data) => {
   const cardAuthor = createElement("p");
   cardAuthor.classList.add("books-item__description-author");
   cardAuthor.textContent = data.author; // author
+  cardAuthor.title = data.author;
 
   const cardPrice = createElement("p");
   cardPrice.classList.add("books-item__description-price");

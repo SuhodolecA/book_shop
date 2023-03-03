@@ -121,7 +121,8 @@ ul {
   transition: transform 0.3s ease-in-out;
 }
 
-.books-item__description-title {
+.books-item__description-title,
+.books-item__description-author {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -131,6 +132,7 @@ ul {
 .books-item__description-price {
   margin: 0.4em 0;
 }
+
 .books-item__controls {
   display: flex;
   justify-content: space-between;
