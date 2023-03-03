@@ -4,12 +4,13 @@ const createPopupWindow = (data) => {
   // create popup container
   const popupContainer = createElement("div");
   popupContainer.classList.add("popup");
+  popupContainer.classList.add("hide");
 
   // create popup close button
   const popupCloseBtn = createElement("button");
   popupCloseBtn.classList.add("popup-close");
   popupCloseBtn.type = "button";
-  popupCloseBtn.textContent = "close";
+  popupCloseBtn.textContent = "x";
 
   // create popup cover container
   const popupCoverContainer = createElement("div");

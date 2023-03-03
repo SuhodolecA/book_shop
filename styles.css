@@ -108,7 +108,7 @@ ul {
 }
 
 .books-item:hover .books-item__cover-img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .books-item__cover {
@@ -174,3 +174,95 @@ ul {
   color: hsl(0, 0%, 93%);
 }
 /* footer styles */
+
+/* popup styles */
+.popup {
+  /* border: 1px solid palevioletred; */
+  background-color: hsl(208, 100%, 97%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1em;
+  overflow: hidden;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  min-width: 15.625em;
+}
+
+.popup.hide {
+  display: none;
+}
+
+.popup-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.3em;
+  background-color: transparent;
+  transition: all 0.5s ease-in-out;
+}
+
+.popup-close:hover,
+.popup-close:focus {
+  transform: rotate(360deg);
+  color: hsl(102, 35%, 54%);
+}
+
+.popup-cover__img {
+  display: block;
+}
+
+.popup-description {
+  margin-top: 2em;
+  text-align: justify;
+}
+
+.popup-description__title {
+  margin-bottom: 0.7em;
+}
+
+.popup-description__text {
+  font-size: 1.2em;
+  line-height: 1.3;
+}
+/* popup styles */
+
+/* @media */
+@media (max-width: 75rem) {
+  .popup-cover {
+    display: none;
+  }
+
+  .popup-description {
+    margin-top: 0.8em;
+  }
+}
+@media (max-width: 48rem) {
+  .popup-description {
+    margin-top: 0.8em;
+    font-size: 0.8em;
+  }
+
+  .popup-description__text {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 35rem) {
+  .popup-description {
+    font-size: 0.7em;
+  }
+
+  .popup-description__text {
+    font-size: 1em;
+  }
+}
+/* @media */
