@@ -1,3 +1,7 @@
 const wrapper = document.querySelector(".wrapper");
 
-export { wrapper };
+let dataList;
+
+const setData = (data) => (dataList = data);
+
+export { wrapper, dataList, setData };

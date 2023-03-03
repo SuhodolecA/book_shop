@@ -11,6 +11,17 @@
   padding: 0;
 }
 
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  align-items: start;
+}
+
+.wrapper > * {
+  flex-basis: 100%;
+}
+
 .container {
   max-width: 80rem;
   margin: 0 auto;
@@ -69,8 +80,9 @@
 .footer {
   background-color: hsl(120, 5%, 25%);
   color: hsl(0, 0%, 83%);
-  /* padding: 0.3125rem 0; */
+  padding: 0.3125em 0;
   text-align: center;
+  margin-top: auto;
 }
 
 .footer-link {
