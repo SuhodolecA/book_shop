@@ -96,21 +96,29 @@ ul {
   max-width: 14rem;
   width: 100%;
   cursor: pointer;
-  border-radius: 7px;
+  border-radius: 0.4375rem;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
-  padding: 0.3em;
+  padding: 0.5em;
 }
 
 .books-item:hover,
 .books-item:focus {
-  transform: scale(1.01);
-  box-shadow: 3px 2px 10px hsl(102, 35%, 54%, 0.9);
+  box-shadow: 0.1875rem 0.125rem 0.625rem hsla(102, 35%, 54%, 0.9);
+}
+
+.books-item:hover .books-item__cover-img {
+  transform: scale(1.05);
+}
+
+.books-item__cover {
+  overflow: hidden;
 }
 
 .books-item__cover-img {
   display: block;
   width: 100%;
+  transition: transform 0.3s ease-in-out;
 }
 
 .books-item__description-title {
@@ -122,6 +130,27 @@ ul {
 .books-item__description-title,
 .books-item__description-price {
   margin: 0.4em 0;
+}
+.books-item__controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.books-item__controls-btn {
+  border: 0;
+  padding: 0.4em 0.5em;
+  color: hsl(0, 0%, 100%);
+  border-radius: 0.2em;
+  font-size: 1em;
+  font-weight: 700;
+  background-color: hsl(102, 35%, 54%);
+  cursor: pointer;
+  transition: background 0.3s ease-in;
+}
+
+.books-item__controls-btn:hover,
+.books-item__controls-btn:focus {
+  background-color: hsl(102, 41%, 39%);
 }
 /* main styles */
 
