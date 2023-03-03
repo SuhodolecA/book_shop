@@ -27,6 +27,7 @@ const createBooksCard = (data) => {
   const cardTitle = createElement("h4");
   cardTitle.classList.add("books-item__description-title");
   cardTitle.textContent = data.title; // Title
+  cardTitle.title = data.title;
 
   const cardAuthor = createElement("p");
   cardAuthor.classList.add("books-item__description-author");
