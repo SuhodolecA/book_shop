@@ -1,0 +1,64 @@
+:root {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 0.6em;
+}
+
+.header {
+  background-color: hsl(0, 0%, 26%);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-basket {
+  position: relative;
+  padding: 0.3125em;
+  min-width: 4.375em;
+  text-align: center;
+}
+
+.header-basket__icon {
+  font-size: 1.875em;
+  color: hsl(102, 35%, 54%);
+  transition: color 0.2s ease-in-out;
+  padding: 0.3125em;
+}
+.header-basket__icon:hover {
+  color: hsl(112, 55%, 74%);
+}
+
+.header-basket__counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+  font-size: 0.625em;
+  font-weight: 500;
+  border-radius: 50%;
+  background-color: hsl(112, 55%, 74%);
+  width: 1.25rem;
+  height: 1.25rem;
+  user-select: none;
+  position: absolute;
+  top: 0.9rem;
+  left: 2.7rem;
+}
