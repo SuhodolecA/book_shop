@@ -24,6 +24,7 @@ ul {
 
 .wrapper > * {
   flex-basis: 100%;
+  position: relative;
 }
 
 .container {
@@ -31,6 +32,23 @@ ul {
   margin: 0 auto;
   padding: 0 0.6em;
 }
+
+/* overlay styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  cursor: pointer;
+}
+
+.overlay.hide {
+  display: none;
+}
+/* overlay styles */
 
 /* header styles */
 .header {
@@ -190,6 +208,7 @@ ul {
   align-items: center;
   gap: 1em;
   min-width: 15.625em;
+  z-index: 3;
 }
 
 .popup.hide {

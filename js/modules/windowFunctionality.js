@@ -3,6 +3,7 @@ import { createHeader } from "./header.js";
 import { createMain } from "./main.js";
 import { createFooter } from "./footer.js";
 import { createPopupWindow } from "./popup.js";
+import { createOverlay } from "./overlay.js";
 
 const windowLoadFunctionality = () => {
   window.addEventListener("load", () => {
@@ -16,6 +17,7 @@ const windowLoadFunctionality = () => {
       })
       .then((response) => setData(response))
       .then(() => {
+        fragment.append(createOverlay());
         fragment.append(createPopupWindow(dataList[0]));
         fragment.append(createHeader());
         fragment.append(createMain());
