@@ -2,7 +2,7 @@ import { wrapper, setData, dataList } from "./globalVars.js";
 import { createHeader } from "./header.js";
 import { createMain } from "./main.js";
 import { createFooter } from "./footer.js";
-import { createPopupWindow } from "./popup.js";
+import { createPopupWindow, popupFunctionality } from "./popup.js";
 import { createOverlay } from "./overlay.js";
 
 const windowLoadFunctionality = () => {
@@ -23,6 +23,10 @@ const windowLoadFunctionality = () => {
         fragment.append(createMain());
         fragment.append(createFooter());
         wrapper.append(fragment);
+      })
+      .then(() => {
+        // setBooksContainer(document.querySelector(".books"));
+        popupFunctionality();
       });
   });
 };

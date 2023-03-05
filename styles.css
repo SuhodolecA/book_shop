@@ -33,6 +33,9 @@ ul {
   padding: 0 0.6em;
 }
 
+.stop-scroll {
+  overflow: hidden;
+}
 /* overlay styles */
 .overlay {
   position: fixed;
