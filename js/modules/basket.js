@@ -1,6 +1,41 @@
 import { createElement } from "./helperFunctions.js";
-import { dataList, basketItemsList } from "./globalVars.js";
+import { dataList, basketItemsList, setBasketList } from "./globalVars.js";
 import { createBooksCard } from "./booksSection.js";
+
+const updateSum = () => {
+  const totalAmount = document.querySelector(".basket-section__info-amount");
+  let sum = 0;
+  const booksList = document.querySelectorAll(".basket-section__item");
+  console.log("booksList", booksList);
+  for (let i = 0; i < booksList.length; i++) {
+    const bookPriceItem = booksList[i].querySelector(
+      ".basket-section__item-description__price"
+    );
+    const bookInput = booksList[i].querySelector(
+      ".basket-section__item-counter__input"
+    );
+    const bookPrice = parseInt(bookPriceItem.textContent);
+    const bookInputValue = bookInput.value;
+    sum += bookPrice * bookInputValue;
+  }
+
+  totalAmount.textContent = `${sum}$`;
+};
+
+const removeItem = (event) => {
+  const booksList = document.querySelectorAll(".basket-section__item");
+  const id = +event.currentTarget.closest(".basket-section__item").id;
+  console.log("id", id);
+  console.log("booksList", booksList);
+  booksList.forEach((item) => {
+    if (item.id == id) {
+      item.remove();
+      setBasketList(basketItemsList.filter((item) => item != id));
+      updateSum();
+      console.log("basketItemsList", basketItemsList);
+    }
+  });
+};
 
 const createBasketSectionItem = (book) => {
   // create card container
@@ -54,6 +89,7 @@ const createBasketSectionItem = (book) => {
   counter.id = "counter";
   counter.min = 0;
   counter.max = 999;
+  counter.addEventListener("input", updateSum);
 
   counterSection.append(counter);
 
@@ -62,6 +98,7 @@ const createBasketSectionItem = (book) => {
   removeBtn.classList.add("basket-section__item-btn");
   removeBtn.type = "button";
   removeBtn.textContent = "Remove";
+  removeBtn.addEventListener("click", removeItem);
 
   cardDescriptionSection.append(cardTitle);
   cardDescriptionSection.append(cardAuthor);
@@ -80,13 +117,13 @@ const updateBasketSections = () => {
   const basketSectionList = document.querySelector(".basket-section__list");
   const booksList = basketSectionList.querySelectorAll(".basket-section__item");
   const booksListIds = Array.from(booksList).map((book) => +book.id);
-
   if (basketItemsList.length > 0) {
     for (let i = 0; i < basketItemsList.length; i++) {
       const cardId = basketItemsList[i];
       if (!booksListIds.includes(cardId)) {
         const bookCard = createBasketSectionItem(dataList[cardId]);
         basketSectionList.append(bookCard);
+        updateSum();
       }
     }
   } else {

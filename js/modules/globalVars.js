@@ -2,9 +2,9 @@ const wrapper = document.querySelector(".wrapper");
 // let booksContainer;
 
 let dataList;
-const basketItemsList = [];
+let basketItemsList = [];
 
 const setData = (data) => (dataList = data);
-// const setBooksContainer = (data) => (booksContainer = data);
+const setBasketList = (data) => (basketItemsList = data);
 
-export { wrapper, dataList, setData, basketItemsList };
+export { wrapper, dataList, setData, basketItemsList, setBasketList };
