@@ -1,5 +1,6 @@
 import { createElement } from "./helperFunctions.js";
 import { createBooksCardList } from "./booksSection.js";
+import { crateBasketSection } from "./basket.js";
 
 const createMain = () => {
   const booksList = createBooksCardList();
@@ -11,7 +12,11 @@ const createMain = () => {
   const container = createElement("div");
   container.classList.add("container");
 
+  // create basket section
+  const basketSection = crateBasketSection();
+
   container.append(booksList);
+  container.append(basketSection);
   main.append(container);
 
   return main;
