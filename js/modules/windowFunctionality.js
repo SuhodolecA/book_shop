@@ -4,6 +4,7 @@ import { createMain } from "./main.js";
 import { createFooter } from "./footer.js";
 import { createPopupWindow, popupFunctionality } from "./popup.js";
 import { createOverlay } from "./overlay.js";
+import { updateBasketCounter, addToCart } from "./basket.js";
 
 const windowLoadFunctionality = () => {
   window.addEventListener("load", () => {
@@ -23,10 +24,13 @@ const windowLoadFunctionality = () => {
         fragment.append(createMain());
         fragment.append(createFooter());
         wrapper.append(fragment);
+        console.log("dataList", dataList[0]);
       })
       .then(() => {
         // setBooksContainer(document.querySelector(".books"));
         popupFunctionality();
+        addToCart();
+        updateBasketCounter();
       });
   });
 };

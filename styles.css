@@ -56,6 +56,7 @@ ul {
 /* header styles */
 .header {
   background-color: hsl(0, 0%, 26%);
+  position: relative;
 }
 
 .header .container {
@@ -65,14 +66,21 @@ ul {
 }
 
 .header-basket {
-  position: relative;
-  padding: 0.3125em;
-  min-width: 4.375em;
-  text-align: center;
+  position: absolute;
+  right: 2rem;
+  height: 100%;
+  min-width: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-basket.drop-zone {
+  animation: dropzone 0.7s ease-in-out infinite;
 }
 
 .header-basket__icon {
-  font-size: 1.875em;
+  font-size: 2.3em;
   color: hsl(102, 35%, 54%);
   transition: color 0.2s ease-in-out;
   padding: 0.3125em;
@@ -92,12 +100,12 @@ ul {
   font-weight: 500;
   border-radius: 50%;
   background-color: hsl(112, 55%, 74%);
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.3rem;
+  height: 1.3rem;
   user-select: none;
   position: absolute;
-  top: 0.9rem;
-  left: 2.7rem;
+  top: 1.6rem;
+  left: 3.5rem;
 }
 /* header styles */
 
@@ -122,6 +130,11 @@ ul {
   transition: all 0.3s ease-in-out;
   padding: 0.5em;
 }
+
+/* .books-item.drag {
+  opacity: 0.5;
+  transform: scale(0.6);
+} */
 
 .books-item:hover,
 .books-item:focus {
@@ -165,7 +178,7 @@ ul {
   color: hsl(0, 0%, 100%);
   border-radius: 0.2em;
   font-size: 1em;
-  font-weight: 700;
+  /* font-weight: 700; */
   background-color: hsl(102, 35%, 54%);
   cursor: pointer;
   transition: background 0.3s ease-in;
@@ -288,3 +301,18 @@ ul {
   }
 }
 /* @media */
+
+/* animations */
+
+/* drop-zone animation */
+@keyframes dropzone {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+/* drop-zone animation */
+/* animations */

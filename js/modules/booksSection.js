@@ -6,6 +6,7 @@ const createBooksCard = (data) => {
   const cardContainer = createElement("li");
   cardContainer.classList.add("books-item");
   cardContainer.id = data.id;
+  cardContainer.draggable = true;
 
   // create card cover section
   const cardCoverSection = createElement("div");
