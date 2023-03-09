@@ -19,7 +19,8 @@ ul {
   display: flex;
   flex-wrap: wrap;
   min-height: 100vh;
-  align-items: start;
+  /* align-items: start; */
+  flex-direction: column;
 }
 
 .wrapper > * {
@@ -112,6 +113,7 @@ ul {
 /* main styles */
 .main {
   padding: 1em 0;
+  flex: 1 1 100%;
 }
 
 .books {
@@ -119,6 +121,10 @@ ul {
   flex-wrap: wrap;
   gap: 1em;
   justify-content: space-evenly;
+}
+
+.books.hide {
+  display: none;
 }
 
 .books-item {
@@ -271,6 +277,10 @@ ul {
 /* popup styles */
 
 /*  basket section */
+.basket-section.hide {
+  display: none;
+}
+
 .basket-section__list {
   list-style: none;
 }
@@ -312,6 +322,12 @@ ul {
 .basket-section__item-description__text {
   font-size: 0.8em;
   text-align: justify;
+}
+
+.basket-section__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 /*  basket section */
 

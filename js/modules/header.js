@@ -1,4 +1,6 @@
 import { createElement } from "./helperFunctions.js";
+import { showBasketSection } from "./basket.js";
+import { showBookSection } from "./booksSection.js";
 
 const createLogo = () => {
   // create logo container
@@ -12,6 +14,7 @@ const createLogo = () => {
   headerLogoImg.src = "assets/images/header/header_logo.png";
 
   headerLogoContainer.append(headerLogoImg);
+  headerLogoContainer.addEventListener("click", showBookSection);
   return headerLogoContainer;
 };
 
@@ -34,6 +37,7 @@ const createShoppingBasket = () => {
 
   shoppingBasketContainer.append(shoppingBasketImg);
   shoppingBasketContainer.append(shoppingBasketCounter);
+  shoppingBasketContainer.addEventListener("click", showBasketSection);
 
   return shoppingBasketContainer;
 };

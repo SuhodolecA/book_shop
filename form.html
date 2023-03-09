@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <form action="/" method="post">
+        <fieldset>
+            <legend>Personal Info</legend>
+            <div class="name">
+                <label for="userName">Name:</label>
+                <input type="text" name="username" id="userName" required />
+            </div>
+            <div class="surname">
+                <label for="surName">Surname:</label>
+                <input type="text" name="surname" id="surName" required />
+            </div>
+            <div class="date">
+                <label for="deliveryDate">Choose delivery date:</label>
+                <input type="date" name="deliverydate" id="deliveryDate" required />
+            </div>
+            <div class="street">
+                <label for="deliveryStreet">Delivery street:</label>
+                <input type="text" name="deliverystreet" id="deliveryStreet" required />
+            </div>
+            </div>
+            <div class="housenumber">
+                <label for="houseNumber">House number:</label>
+                <input type="number" name="housenumber" id="houseNumber" required />
+            </div>
+            <div class="flatnumber">
+                <label for="flatNumber">Flat number:</label>
+                <input type="number" name="flatnumber" id="flatNumber" required />
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Payment method:</legend>
+            <div class="payment">
+                <div class="payment-cash">
+                    <label for="cash">Cash</label>
+                    <input type="radio" name="paymentmethod" id="cash" value="cash" required />
+                </div>
+                <div class="payment-card">
+                    <label for="card">Card</label>
+                    <input type="radio" name="paymentmethod" id="card" value="card" checked required />
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Choose 2 gifts:</legend>
+            <div class="gifts">
+                <div class="gift-1">
+                    <input type="checkbox" name="packAsAGift" id="packAsAGift" value="packAsAGift" />
+                    <label for="packAsAGift">pack as a gift</label>
+                </div>
+                <div class="gift-2">
+                    <input type="checkbox" name="addPostcard" id="addPostcard" value="addPostcard" />
+                    <label for="addPostcard">add postcard</label>
+                </div>
+                <div class="gift-3">
+                    <input type="checkbox" name="discount" id="discount" value="discount" />
+                    <label for="discount">provide 2% discount to the next time</label>
+                </div>
+                <div class="gift-4">
+                    <input type="checkbox" name="pencil" id="pencil" value="pencil" />
+                    <label for="pencil">branded pen or pencil</label>
+                </div>
+            </div>
+        </fieldset>
+
+        <button class="complete-btn" type="confirm" disabled>Complete</button>
+    </form>
+
+</body>
+
+</html>

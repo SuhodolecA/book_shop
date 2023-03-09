@@ -1,6 +1,15 @@
 import { dataList } from "./globalVars.js";
 import { createElement } from "./helperFunctions.js";
 
+const showBookSection = (e) => {
+  e.preventDefault();
+  const basketSection = document.querySelector(".basket-section");
+  const booksSection = document.querySelector(".books");
+
+  basketSection.classList.add("hide");
+  booksSection.classList.remove("hide");
+};
+
 const createBooksCard = (data) => {
   // create card container
   const cardContainer = createElement("li");
@@ -84,4 +93,4 @@ const createBooksCardList = () => {
   return cardsContainer;
 };
 
-export { createBooksCard, createBooksCardList };
+export { createBooksCard, createBooksCardList, showBookSection };

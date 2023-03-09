@@ -2,6 +2,14 @@ import { createElement } from "./helperFunctions.js";
 import { dataList, basketItemsList, setBasketList } from "./globalVars.js";
 import { createBooksCard } from "./booksSection.js";
 
+const showBasketSection = () => {
+  const basketSection = document.querySelector(".basket-section");
+  const booksSection = document.querySelector(".books");
+
+  basketSection.classList.remove("hide");
+  booksSection.classList.add("hide");
+};
+
 const updateSum = () => {
   const totalAmount = document.querySelector(".basket-section__info-amount");
   let sum = 0;
@@ -32,6 +40,7 @@ const removeItem = (event) => {
       item.remove();
       setBasketList(basketItemsList.filter((item) => item != id));
       updateSum();
+      updateBasketCounter();
       console.log("basketItemsList", basketItemsList);
     }
   });
@@ -135,6 +144,7 @@ const crateBasketSection = () => {
   // crate basket section container
   const crateBasketContainer = createElement("div");
   crateBasketContainer.classList.add("basket-section");
+  crateBasketContainer.classList.add("hide");
 
   // create basket section container list
   const crateBasketContainerList = createElement("ul");
@@ -152,8 +162,15 @@ const crateBasketSection = () => {
   amount.classList.add("basket-section__info-amount");
   amount.textContent = "0$";
 
+  // create confirm order button
+  const confirmBtn = createElement("button");
+  confirmBtn.classList.add("basket-section__info-confirm");
+  confirmBtn.type = "button";
+  confirmBtn.textContent = "Confirm order";
+
   total.append(amount);
   crateBasketContainerInfo.append(total);
+  crateBasketContainerInfo.append(confirmBtn);
 
   crateBasketContainer.append(crateBasketContainerList);
   crateBasketContainer.append(crateBasketContainerInfo);
@@ -218,4 +235,5 @@ export {
   addToCart,
   crateBasketSection,
   updateBasketSections,
+  showBasketSection,
 };
