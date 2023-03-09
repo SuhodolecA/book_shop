@@ -361,6 +361,72 @@ ul {
     font-size: 1em;
   }
 }
+
+/* order page */
+.order-form {
+  /* border: 1px solid red; */
+  background-color: hsl(208, 100%, 97%);
+  padding: 0.5em;
+}
+
+.order-form fieldset {
+  border: 0;
+}
+.order-form fieldset + fieldset {
+  margin-top: 0.3em;
+}
+
+.order-form legend {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.order-form label {
+  margin-bottom: 0.2em;
+}
+
+.personal-info input {
+  border: 2px solid transparent;
+}
+
+/* .personal-info input.invalid {
+  border-color: red;
+} */
+
+.personal-info label {
+  display: block;
+}
+
+/* .personal-info label::after {
+  content: "Invalid value";
+  padding-left: 0.3em;
+  color: red;
+
+} */
+
+.personal-info__item {
+  margin-bottom: 1em;
+  position: relative;
+}
+
+.personal-info__item::after {
+  content: "Invalid value";
+  font-size: 0.8em;
+  color: red;
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+}
+
+.personal-info__item.invalid input {
+  border-color: red;
+}
+
+.personal-info__item.invalid::after {
+  display: block;
+}
+/* order page */
 /* @media */
 
 /* animations */

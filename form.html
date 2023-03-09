@@ -11,36 +11,36 @@
 
 <body>
 
-    <form action="/" method="post">
-        <fieldset>
-            <legend>Personal Info</legend>
-            <div class="name">
+    <form class="order-form" action="/" method="post">
+        <fieldset class="personal-info">
+            <legend>Personal Info:</legend>
+            <div class="personal-info__item name">
                 <label for="userName">Name:</label>
                 <input type="text" name="username" id="userName" required />
             </div>
-            <div class="surname">
+            <div class="personal-info__item surname">
                 <label for="surName">Surname:</label>
                 <input type="text" name="surname" id="surName" required />
             </div>
-            <div class="date">
+            <div class="personal-info__item date">
                 <label for="deliveryDate">Choose delivery date:</label>
                 <input type="date" name="deliverydate" id="deliveryDate" required />
             </div>
-            <div class="street">
+            <div class="personal-info__item street">
                 <label for="deliveryStreet">Delivery street:</label>
                 <input type="text" name="deliverystreet" id="deliveryStreet" required />
             </div>
             </div>
-            <div class="housenumber">
+            <div class="personal-info__item housenumber">
                 <label for="houseNumber">House number:</label>
                 <input type="number" name="housenumber" id="houseNumber" required />
             </div>
-            <div class="flatnumber">
+            <div class="personal-info__item flatnumber">
                 <label for="flatNumber">Flat number:</label>
                 <input type="number" name="flatnumber" id="flatNumber" required />
             </div>
         </fieldset>
-        <fieldset>
+        <fieldset class="payment-method">
             <legend>Payment method:</legend>
             <div class="payment">
                 <div class="payment-cash">
