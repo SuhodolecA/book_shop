@@ -329,6 +329,28 @@ ul {
   justify-content: space-between;
   align-items: center;
 }
+
+.basket-section__info-confirm {
+  display: inline-block;
+  padding: 0.3em 0.5em;
+  border-radius: 0.2rem;
+  background-color: hsl(102, 35%, 54%);
+  color: hsl(208, 100%, 97%);
+  text-decoration: none;
+  transition: 0.3s linear;
+}
+
+.basket-section__info-confirm.inactive {
+  background-color: hsl(103, 7%, 20%);
+  pointer-events: none;
+}
+.basket-section__info-confirm.inactive:hover {
+  background-color: hsl(103, 7%, 20%);
+}
+
+.basket-section__info-confirm:hover {
+  background-color: hsl(102, 35%, 44%);
+}
 /*  basket section */
 
 /* @media */
@@ -421,6 +443,9 @@ ul {
 
 .personal-info__item.invalid input {
   border-color: red;
+}
+.personal-info__item.valid input {
+  border-color: green;
 }
 
 .personal-info__item.invalid::after {

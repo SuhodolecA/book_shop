@@ -1,11 +1,20 @@
 import { createElement } from "./helperFunctions.js";
 import { dataList, basketItemsList, setBasketList } from "./globalVars.js";
-import { createBooksCard } from "./booksSection.js";
+
+const confirmBtnRestrictions = () => {
+  const confirmBtn = document.querySelector(".basket-section__info-confirm");
+
+  if (basketItemsList.length === 0) {
+    confirmBtn.classList.add("inactive");
+  } else {
+    confirmBtn.classList.remove("inactive");
+  }
+};
 
 const showBasketSection = () => {
   const basketSection = document.querySelector(".basket-section");
   const booksSection = document.querySelector(".books");
-
+  confirmBtnRestrictions();
   basketSection.classList.remove("hide");
   booksSection.classList.add("hide");
 };
@@ -39,6 +48,7 @@ const removeItem = (event) => {
     if (item.id == id) {
       item.remove();
       setBasketList(basketItemsList.filter((item) => item != id));
+      confirmBtnRestrictions();
       updateSum();
       updateBasketCounter();
       console.log("basketItemsList", basketItemsList);
@@ -163,9 +173,10 @@ const crateBasketSection = () => {
   amount.textContent = "0$";
 
   // create confirm order button
-  const confirmBtn = createElement("button");
+  const confirmBtn = createElement("a");
   confirmBtn.classList.add("basket-section__info-confirm");
-  confirmBtn.type = "button";
+  // confirmBtn.classList.add("inactive");
+  confirmBtn.href = "form.html";
   confirmBtn.textContent = "Confirm order";
 
   total.append(amount);

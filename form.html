@@ -16,7 +16,7 @@
             <legend>Personal Info:</legend>
             <div class="personal-info__item name">
                 <label for="userName">Name:</label>
-                <input type="text" name="username" id="userName" required />
+                <input type="text" minlength="4" name="username" id="userName" required />
             </div>
             <div class="personal-info__item surname">
                 <label for="surName">Surname:</label>
@@ -33,11 +33,11 @@
             </div>
             <div class="personal-info__item housenumber">
                 <label for="houseNumber">House number:</label>
-                <input type="number" name="housenumber" id="houseNumber" required />
+                <input type="number" name="housenumber" id="houseNumber" min="1" required />
             </div>
             <div class="personal-info__item flatnumber">
                 <label for="flatNumber">Flat number:</label>
-                <input type="number" name="flatnumber" id="flatNumber" required />
+                <input type="text" name="flatnumber" id="flatNumber" required />
             </div>
         </fieldset>
         <fieldset class="payment-method">
@@ -57,19 +57,19 @@
             <legend>Choose 2 gifts:</legend>
             <div class="gifts">
                 <div class="gift-1">
-                    <input type="checkbox" name="packAsAGift" id="packAsAGift" value="packAsAGift" />
+                    <input class="gift" type="checkbox" name="packAsAGift" id="packAsAGift" value="packAsAGift" />
                     <label for="packAsAGift">pack as a gift</label>
                 </div>
                 <div class="gift-2">
-                    <input type="checkbox" name="addPostcard" id="addPostcard" value="addPostcard" />
+                    <input class="gift" type="checkbox" name="addPostcard" id="addPostcard" value="addPostcard" />
                     <label for="addPostcard">add postcard</label>
                 </div>
                 <div class="gift-3">
-                    <input type="checkbox" name="discount" id="discount" value="discount" />
+                    <input class="gift" type="checkbox" name="discount" id="discount" value="discount" />
                     <label for="discount">provide 2% discount to the next time</label>
                 </div>
                 <div class="gift-4">
-                    <input type="checkbox" name="pencil" id="pencil" value="pencil" />
+                    <input class="gift" type="checkbox" name="pencil" id="pencil" value="pencil" />
                     <label for="pencil">branded pen or pencil</label>
                 </div>
             </div>
@@ -77,7 +77,7 @@
 
         <button class="complete-btn" type="confirm" disabled>Complete</button>
     </form>
-
+    <script src="js/modules/formValidation.js"></script>
 </body>
 
 </html>
