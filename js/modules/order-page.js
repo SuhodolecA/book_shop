@@ -1,3 +1,11 @@
+import {
+  createSummarizedPopup,
+  updatePopupInfo,
+  popupFunctionality,
+} from "./summarizedPopup.js";
+import { createOverlay } from "./overlay.js";
+
+const wrapper = document.querySelector(".form-wrapper");
 const completeBtn = document.querySelector(".complete-btn");
 const form = document.querySelector(".order-form");
 const formItems = form.querySelectorAll(".personal-info__item");
@@ -10,6 +18,8 @@ const flatInput = document.querySelector("#flatNumber");
 const giftsInput = document.querySelectorAll(".gift");
 
 window.addEventListener("load", () => {
+  wrapper.append(createOverlay());
+  wrapper.append(createSummarizedPopup());
   setMinDate();
   nameInput.addEventListener("input", nameValidation);
   nameInput.addEventListener("blur", nameValidation);
@@ -24,6 +34,8 @@ window.addEventListener("load", () => {
   flatInput.addEventListener("input", numbersValidation);
   flatInput.addEventListener("blur", numbersValidation);
   form.reset();
+
+  completeBtn.addEventListener("click", completeBtnFunctionality);
 
   giftsInput.forEach((input) => {
     input.addEventListener("input", giftInputRestriction);
@@ -157,4 +169,10 @@ const giftInputRestriction = () => {
       input.disabled = false;
     });
   }
+};
+
+const completeBtnFunctionality = (event) => {
+  event.preventDefault();
+  updatePopupInfo(streetInput, houseInput, flatInput, nameInput, surNameInput);
+  popupFunctionality();
 };
