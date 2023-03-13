@@ -23,7 +23,6 @@ const updateSum = () => {
   const totalAmount = document.querySelector(".basket-section__info-amount");
   let sum = 0;
   const booksList = document.querySelectorAll(".basket-section__item");
-  console.log("booksList", booksList);
   for (let i = 0; i < booksList.length; i++) {
     const bookPriceItem = booksList[i].querySelector(
       ".basket-section__item-description__price"
@@ -42,8 +41,6 @@ const updateSum = () => {
 const removeItem = (event) => {
   const booksList = document.querySelectorAll(".basket-section__item");
   const id = +event.currentTarget.closest(".basket-section__item").id;
-  console.log("id", id);
-  console.log("booksList", booksList);
   booksList.forEach((item) => {
     if (item.id == id) {
       item.remove();
@@ -51,7 +48,6 @@ const removeItem = (event) => {
       confirmBtnRestrictions();
       updateSum();
       updateBasketCounter();
-      console.log("basketItemsList", basketItemsList);
     }
   });
 };
@@ -229,8 +225,6 @@ const addToCart = () => {
     btn.addEventListener("click", ({ currentTarget }) => {
       const bookId = +currentTarget.closest(".books-item").id;
       if (basketItemsList.includes(bookId)) {
-        console.log("includes");
-        console.log("basketItemsList", basketItemsList);
         return;
       } else {
         basketItemsList.push(bookId);

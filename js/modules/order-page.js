@@ -46,14 +46,6 @@ const isValidForm = () => {
   const isValid =
     Array.from(formItems).filter((item) => item.classList.contains("valid"))
       .length === formItems.length;
-  console.log("formItems.length", formItems.length);
-  console.log("formItems", formItems);
-  console.log(
-    "Array.from(formItems).filter((item) => item.classList.contains(valid))",
-    Array.from(formItems).filter((item) => item.classList.contains("valid"))
-      .length
-  );
-
   completeBtn.disabled = !isValid;
 };
 
@@ -65,7 +57,6 @@ const nameValidation = ({ currentTarget }) => {
     nameInput.value.split("").filter((char) => char == " ").length === 0;
   const isCorrectLength = currentTarget.value.length > minLength;
   if (isOnlyString && isNoSpaces && isCorrectLength) {
-    console.log("true");
     currentTarget.parentElement.classList.remove("invalid");
     currentTarget.parentElement.classList.add("valid");
     isValidForm();
@@ -103,15 +94,12 @@ const setMinDate = () => {
 
 const streetValidation = ({ currentTarget }) => {
   const length = +currentTarget.value.length;
-  console.log("length", length);
   if (length > 4) {
-    console.log("true");
     streetInput.parentElement.classList.remove("invalid");
     streetInput.parentElement.classList.add("valid");
     isValidForm();
     return true;
   } else {
-    console.log("false");
     streetInput.parentElement.classList.add("invalid");
     streetInput.parentElement.classList.remove("valid");
     isValidForm();

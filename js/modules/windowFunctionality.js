@@ -24,7 +24,6 @@ const windowLoadFunctionality = () => {
         fragment.append(createMain());
         fragment.append(createFooter());
         wrapper.append(fragment);
-        console.log("dataList", dataList[0]);
       })
       .then(() => {
         // setBooksContainer(document.querySelector(".books"));
