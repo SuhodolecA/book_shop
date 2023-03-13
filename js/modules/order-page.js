@@ -18,8 +18,10 @@ const flatInput = document.querySelector("#flatNumber");
 const giftsInput = document.querySelectorAll(".gift");
 
 window.addEventListener("load", () => {
-  wrapper.append(createOverlay());
-  wrapper.append(createSummarizedPopup());
+  const fragment = document.createDocumentFragment();
+  fragment.append(createOverlay());
+  fragment.append(createSummarizedPopup());
+  wrapper.append(fragment);
   setMinDate();
   nameInput.addEventListener("input", nameValidation);
   nameInput.addEventListener("blur", nameValidation);
